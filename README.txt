@@ -18,8 +18,9 @@ Compilation
 2. Change the environment variable.
   $ source /opt/poky/2.4.3/environment-setup-aarch64-poky-linux
 3. Modify Makefile
--WORK=/home/kurata/Projects/VLP64_101_G2E_V2M/work/
+-WORK=/data2/hoaphan/onnxruntime/
 +WORK=<Your Yocto Work Directory>
+-SDK_ONNX=/data2/hoaphan/onnxruntime/sdk/sysroots/
 +SDK_ONNX=<your onnx folder>
 4. compile
   $ make
