@@ -1,11 +1,11 @@
 WORK=/data2/hoaphan/onnxruntime/
 SDK_ONNX=/data2/hoaphan/onnxruntime/sdk/sysroots/
 
-onnxruntime: tiny_yolo_v3.cpp
-	${CXX} -std=c++14 tiny_yolo_v3.cpp box.cpp image.cpp \
+onnxruntime: Yolo_v3.cpp
+	${CXX} -std=c++14 Yolo_v3.cpp box.cpp image.cpp \
 	-DONNX_ML \
 	-I /data/jpeglib/ \
-	-I /media/sf_Ubuntu/Tiny_Yolo_v3/ \
+	-I /media/sf_Ubuntu/Yolo_v3/ \
 	-L /data/onnxruntime/build/Linux/RelWithDebInfo/ \
 	-L /data/onnxruntime/build/Linux/RelWithDebInfo/onnx/ \
 	-L /data/onnxruntime/build/Linux/RelWithDebInfo/external/protobuf/cmake/ \
@@ -26,7 +26,7 @@ onnxruntime: tiny_yolo_v3.cpp
 	-lonnxruntime_mlas \
 	-lonnx \
 	-ljpeg -ltbb -ltiff -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_photo -lopencv_imgcodecs \
-	-lpthread -O2 -fopenmp -ldl ${LDFLAGS} -o tiny_yolo_v3
+	-lpthread -O2 -fopenmp -ldl ${LDFLAGS} -o Yolo_v3
 
 clean:
-	rm -rf *.o tiny_yolo_v3
+	rm -rf *.o Yolo_v3
