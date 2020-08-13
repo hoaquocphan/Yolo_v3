@@ -1,25 +1,24 @@
 WORK=/data2/hoaphan/onnxruntime/
 SDK_ONNX=/data2/hoaphan/onnxruntime/sdk/sysroots/
-#this is make file for onnxruntime v1.4.0
+#this is make file for onnxruntime v1.0.0
 onnxruntime: Yolo_v3.cpp
 	${CXX} -std=c++14 Yolo_v3.cpp box.cpp image.cpp \
 	-DONNX_ML \
 	-I /media/sf_Ubuntu/Yolo_v3/ \
-	-L /data/onnxruntime/build/Linux/RelWithDebInfo/ \
-	-L /data/onnxruntime/build/Linux/RelWithDebInfo/onnx/ \
-	-L /data/onnxruntime/build/Linux/RelWithDebInfo/external/nsync/ \
-	-L /data/onnxruntime/build/Linux/RelWithDebInfo/external/protobuf/cmake/ \
-	-L /data/onnxruntime/build/Linux/RelWithDebInfo/external/re2/ \
-	-L /data/onnxruntime/cmake/ \
+	-L /data/onnxruntime_1.0.0/build/Linux/RelWithDebInfo/ \
+	-L /data/onnxruntime_1.0.0/build/Linux/RelWithDebInfo/onnx/ \
+	-L /data/onnxruntime_1.0.0/build/Linux/RelWithDebInfo/external/protobuf/cmake/ \
+	-L /data/onnxruntime_1.0.0/build/Linux/RelWithDebInfo/external/re2/ \
+	-L /data/onnxruntime_1.0.0/cmake/ \
 	-L /usr/lib/x86_64-linux-gnu/ \
 	-lonnxruntime_session \
 	-lonnxruntime_providers \
+	-lautoml_featurizers \
 	-lonnxruntime_framework \
 	-lonnxruntime_optimizer \
 	-lonnxruntime_graph \
 	-lonnxruntime_common \
 	-lonnx_proto \
-	-lnsync_cpp \
 	-lprotobuf \
 	-lre2 \
 	-lonnxruntime_util \
